@@ -1,5 +1,22 @@
-/* @media (max-width: 750px) {
-  main {
-    background-color: red;
+@media (max-width: 750px) {
+  main,
+  header,
+  nav {
+    flex-direction: column;
+    padding: 10px;
   }
-} */
+
+  .curr-location {
+    padding: 10px;
+  }
+
+  form > input {
+    width: 150px;
+  }
+
+  aside {
+    width: 100%;
+    height: 500px;
+    flex-direction: row;
+  }
+}

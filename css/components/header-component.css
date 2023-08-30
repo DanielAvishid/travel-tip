@@ -1,9 +1,11 @@
 header {
   box-shadow: 0 0 10px gray;
+  padding: 20px 50px;
   margin-bottom: 20px;
 }
 
 form > input {
   border-radius: 10px;
   padding: 10px 20px;
+  width: 200px;
 }
