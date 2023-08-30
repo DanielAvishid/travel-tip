@@ -21,12 +21,6 @@ function _createLoc(locName, lat, lng, weather = null, updatedAt = null) {
   }
 }
 
-// Not sure if thats the right way, let me know what fo you think
-function deleteLoc(id) {
-  // needs to add the entity
-  storageService.delete(entity, id)
-}
-
 function getLocs() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {

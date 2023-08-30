@@ -1,3 +1,24 @@
+.location-table {
+  padding: 15px;
+  min-height: 200px;
+  height: max-content;
+  overflow: scroll;
+  grid-template-columns: 1fr;
+}
+
 .loc-table-btn {
   padding: 5px 10px;
+}
+
+.buttons-container {
+  padding: 5px;
+  gap: 10px;
+}
+
+.location-container {
+  border-bottom: 1px solid black;
+}
+
+.table-h3 {
+  text-align: center;
 }

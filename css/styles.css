@@ -11,6 +11,7 @@
 @import url('components/header-component.css');
 @import url('components/curr-location-component.css');
 @import url('components/table-component.css');
+@import url('components/weather.css');
 
 /* MEDIA QUERIES */
 @import url(setup/mq.css);
