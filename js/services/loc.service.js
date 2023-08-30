@@ -2,10 +2,25 @@ export const locService = {
     getLocs
 }
 
+var gNextId = 1
+const STORAGE_KEY = 'locationsDB'
+
 const locs = [
-    { name: 'Greatplace', lat: 32.047104, lng: 34.832384 },
-    { name: 'Neveragain', lat: 32.047201, lng: 34.832581 }
+    _createLoc('Greatplace', 32.047104, 34.832384, null, null),
+    _createLoc('Neveragain', 32.047201, 34.832581, null, null)
 ]
+
+function _createLoc(locName, lat, lng, weather, updatedAt) {
+    return {
+        id: gNextId++,
+        locName,
+        lat,
+        lng,
+        weather,
+        createdAt: Date.now(),
+        updatedAt
+    }
+}
 
 function getLocs() {
     return new Promise((resolve, reject) => {
@@ -14,5 +29,3 @@ function getLocs() {
         }, 2000)
     })
 }
-
-
