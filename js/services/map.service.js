@@ -4,8 +4,6 @@ export const mapService = {
   panTo,
 }
 
-console.log('hello')
-
 // Var that is used throughout this Module (not global)
 var gMap
 

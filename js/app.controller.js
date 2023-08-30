@@ -7,10 +7,6 @@ window.onPanTo = onPanTo
 window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
 
-console.log('HI')
-
-console.log('hello')
-
 function onInit() {
   mapService
     .initMap()
@@ -19,6 +15,8 @@ function onInit() {
     })
     .catch(() => console.log('Error: cannot init map'))
 }
+
+console.log('HI')
 
 // This function provides a Promise API to the callback-based-api of getCurrentPosition
 function getPosition() {
