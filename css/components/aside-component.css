@@ -1,0 +1,9 @@
+aside {
+  background-color: antiquewhite;
+  width: 30%;
+}
+
+aside > div {
+  height: 50%;
+  background-color: aquamarine;
+}

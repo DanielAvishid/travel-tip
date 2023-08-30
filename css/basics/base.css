@@ -1,7 +1,26 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+  margin: 0;
+}
+
+body > * {
+  padding: 0 50px;
+}
+
+button {
+  height: fit-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgb(31, 31, 231);
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: rgb(50, 50, 237);
+  text-shadow: 0 0 10px black;
 }

@@ -1,25 +1,61 @@
 /* grid helpers */
 
 .grid {
-    display: grid;
+  display: grid;
 }
 
 .grid.flow-column {
-    grid-auto-flow: column;
+  grid-auto-flow: column;
 }
 
 .grid.align-center {
-    align-items: center;
+  align-items: center;
 }
 
 .grid.justify-start {
-    justify-content: start;
+  justify-content: start;
 }
 
 .grid.space-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .grid.space-evenly {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
+
+/* flex helpers */
+
+.flex {
+  display: flex;
+}
+
+.flex.column {
+  flex-direction: column;
+}
+
+.flex.align-center {
+  align-items: center;
+}
+
+.flex.justify-center {
+  justify-content: center;
+}
+
+.flex.justify-start {
+  justify-content: start;
+}
+
+.flex.space-between {
+  justify-content: space-between;
+}
+
+.flex.space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex.gap {
+  gap: 10px;
+}
+
+/* general helpers */

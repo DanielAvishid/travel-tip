@@ -1,11 +1,15 @@
 /* SETUP */
-@import url("setup/vars.css");
+@import url('setup/vars.css');
 
 /* BASICS  */
-@import url("basics/base.css");
-@import url("basics/layout.css");
-@import url("basics/helpers.css");
+@import url('basics/base.css');
+@import url('basics/layout.css');
+@import url('basics/helpers.css');
 
 /* COMPONENTS */
+@import url('components/aside-component.css');
+@import url('components/header-component.css');
+@import url('components/curr-location-component.css');
 
 /* MEDIA QUERIES */
+@import url(setup/mq.css);
