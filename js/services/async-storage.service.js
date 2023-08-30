@@ -1,3 +1,5 @@
+import { locService } from './loc.service.js'
+
 export const storageService = {
     post,   // Create
     get,    // Read
@@ -7,7 +9,7 @@ export const storageService = {
 }
 
 function query(entityType, delay = 500) {
-    var entities = JSON.parse(localStorage.getItem(entityType)) || []
+    var entities = JSON.parse(localStorage.getItem(entityType)) || locService.getLocs()
     return new Promise(resolve => setTimeout(() => resolve(entities), delay))
 }
 
@@ -22,6 +24,9 @@ function get(entityType, entityId) {
 function post(entityType, newEntity) {
     newEntity = JSON.parse(JSON.stringify(newEntity))
     newEntity.id = _makeId()
+    newEntity.weather = null
+    newEntity.updatedAt = null
+    newEntity.createdAt = Date.now()
     return query(entityType).then(entities => {
         entities.push(newEntity)
         _save(entityType, entities)

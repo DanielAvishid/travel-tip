@@ -8,11 +8,12 @@ window.onPanTo = onPanTo
 window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
 
+const LOCATION_KEY = 'locationsDB'
+
 function onInit() {
   mapService
     .initMap()
     .then(() => {
-      onCLickMap()
       console.log('Map is ready')
     })
     .catch(() => console.log('Error: cannot init map'))
@@ -56,7 +57,8 @@ function onPanTo() {
 
 // Render Function //
 function renderLocations() {
-  const locations = locService.getLocs()
-  console.log(locations)
+  const locations = storageService.query(LOCATION_KEY)
+    .then(locations => {
+    })
 }
 

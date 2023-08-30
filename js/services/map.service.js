@@ -1,3 +1,5 @@
+import { storageService } from './async-storage.service.js'
+
 export const mapService = {
   initMap,
   addMarker,
@@ -5,6 +7,7 @@ export const mapService = {
 }
 
 // Var that is used throughout this Module (not global)
+const LOCATION_KEY = 'locationsDB'
 var gMap
 
 function initMap(lat = 32.0749831, lng = 34.9120554) {
@@ -19,9 +22,12 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
       })
       console.log('Map!', gMap)
       gMap.addListener('click', ev => {
+        const locName = prompt('Enter location name:')
         const lat = ev.latLng.lat()
         const lng = ev.latLng.lng()
-        addMarker({ lat, lng })
+        const newLocation = { locName, lat, lng }
+        storageService.post(LOCATION_KEY, newLocation)
+          .then(res => console.log(res))
       })
     })
 }
@@ -53,3 +59,5 @@ function _connectGoogleApi() {
     elGoogleApi.onerror = () => reject('Google script failed to load')
   })
 }
+
+
