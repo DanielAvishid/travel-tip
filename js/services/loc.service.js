@@ -1,18 +1,17 @@
+// import { storageService } from './async-storage.service'
+
 export const locService = {
     getLocs
 }
-
-var gNextId = 1
-const STORAGE_KEY = 'locationsDB'
 
 const locs = [
     _createLoc('Greatplace', 32.047104, 34.832384, null, null),
     _createLoc('Neveragain', 32.047201, 34.832581, null, null)
 ]
 
-function _createLoc(locName, lat, lng, weather, updatedAt) {
+function _createLoc(locName, lat, lng, weather = null, updatedAt = null) {
     return {
-        id: gNextId++,
+        id: _makeId(),
         locName,
         lat,
         lng,
@@ -28,4 +27,13 @@ function getLocs() {
             resolve(locs)
         }, 2000)
     })
+}
+
+function _makeId(length = 5) {
+    var txt = ''
+    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    for (var i = 0; i < length; i++) {
+        txt += possible.charAt(Math.floor(Math.random() * possible.length))
+    }
+    return txt
 }
