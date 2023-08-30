@@ -57,8 +57,23 @@ function onPanTo() {
 
 // Render Function //
 function renderLocations() {
-  const locations = storageService.query(LOCATION_KEY)
-    .then(locations => {
+  const locations = storageService.query(LOCATION_KEY).then(locations => {
+    const strHtMLs = locations.map(location => {
+      return `<div class="flex align-center gap">
+            <span>${location.locName}</span>
+            <button class="loc-table-btn" onclick="onDeleteLoc(${location.id})">x</button>
+        </div>`
     })
+    console.log(strHtMLs)
+    document.querySelector('.locs').innerHTML = strHtMLs.join('')
+  })
 }
 
+// Just for tryout
+renderLocations()
+
+// delete the location - this func is inside the render div above(x btn) 👆
+function onDeleteLoc(id) {
+  onDeleteLoc(id)
+  renderLocations()
+}
